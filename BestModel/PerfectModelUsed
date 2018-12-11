@@ -1,0 +1,624 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PMML version="4.2" xmlns="http://www.dmg.org/PMML-4_2">
+  <Header copyright="makeg">
+    <Application name="KNIME" version="3.3.4"/>
+  </Header>
+  <DataDictionary numberOfFields="8">
+    <DataField name="Mastery-intrinsic orientation (rounded)" optype="categorical" dataType="string">
+      <Value value="7.0"/>
+      <Value value="6.0"/>
+      <Value value="5.0"/>
+      <Value value="4.0"/>
+    </DataField>
+    <DataField name="Mastery-extrinsic orientation (rounded)" optype="categorical" dataType="string">
+      <Value value="4.0"/>
+      <Value value="7.0"/>
+      <Value value="6.0"/>
+      <Value value="2.0"/>
+      <Value value="5.0"/>
+      <Value value="3.0"/>
+    </DataField>
+    <DataField name="Performance-approach orientation (rounded)" optype="categorical" dataType="string">
+      <Value value="3.0"/>
+      <Value value="6.0"/>
+      <Value value="2.0"/>
+      <Value value="4.0"/>
+      <Value value="5.0"/>
+      <Value value="1.0"/>
+    </DataField>
+    <DataField name="Performance-avoidance orientation (rounded)" optype="categorical" dataType="string">
+      <Value value="3.0"/>
+      <Value value="2.0"/>
+      <Value value="6.0"/>
+      <Value value="4.0"/>
+      <Value value="5.0"/>
+      <Value value="1.0"/>
+      <Value value="7.0"/>
+    </DataField>
+    <DataField name="Avoidance orientation (rounded)" optype="categorical" dataType="string">
+      <Value value="6.0"/>
+      <Value value="2.0"/>
+      <Value value="4.0"/>
+      <Value value="3.0"/>
+      <Value value="5.0"/>
+      <Value value="1.0"/>
+    </DataField>
+    <DataField name="Fear of Failure (rounded)" optype="categorical" dataType="string">
+      <Value value="1.0"/>
+      <Value value="3.0"/>
+      <Value value="4.0"/>
+      <Value value="2.0"/>
+      <Value value="6.0"/>
+      <Value value="7.0"/>
+      <Value value="5.0"/>
+    </DataField>
+    <DataField name="Academic withdrawal (rounded)" optype="categorical" dataType="string">
+      <Value value="1.0"/>
+      <Value value="2.0"/>
+      <Value value="3.0"/>
+      <Value value="4.0"/>
+      <Value value="5.0"/>
+      <Value value="6.0"/>
+      <Value value="7.0"/>
+    </DataField>
+    <DataField name="School value (rounded)" optype="categorical" dataType="string">
+      <Value value="3.0"/>
+      <Value value="1.0"/>
+      <Value value="2.0"/>
+      <Value value="4.0"/>
+      <Value value="5.0"/>
+    </DataField>
+  </DataDictionary>
+  <TreeModel modelName="DecisionTree" functionName="classification" splitCharacteristic="multiSplit" missingValueStrategy="lastPrediction" noTrueChildStrategy="returnNullPrediction">
+    <MiningSchema>
+      <MiningField name="Mastery-intrinsic orientation (rounded)" invalidValueTreatment="asIs"/>
+      <MiningField name="Mastery-extrinsic orientation (rounded)" invalidValueTreatment="asIs"/>
+      <MiningField name="Performance-approach orientation (rounded)" invalidValueTreatment="asIs"/>
+      <MiningField name="Performance-avoidance orientation (rounded)" invalidValueTreatment="asIs"/>
+      <MiningField name="Avoidance orientation (rounded)" invalidValueTreatment="asIs"/>
+      <MiningField name="Academic withdrawal (rounded)" invalidValueTreatment="asIs"/>
+      <MiningField name="School value (rounded)" invalidValueTreatment="asIs"/>
+      <MiningField name="Fear of Failure (rounded)" invalidValueTreatment="asIs" usageType="target"/>
+    </MiningSchema>
+    <Node id="0" score="4.0" recordCount="86.0">
+      <True/>
+      <ScoreDistribution value="1.0" recordCount="4.0"/>
+      <ScoreDistribution value="3.0" recordCount="16.0"/>
+      <ScoreDistribution value="4.0" recordCount="25.0"/>
+      <ScoreDistribution value="2.0" recordCount="20.0"/>
+      <ScoreDistribution value="6.0" recordCount="5.0"/>
+      <ScoreDistribution value="7.0" recordCount="3.0"/>
+      <ScoreDistribution value="5.0" recordCount="13.0"/>
+      <Node id="1" score="4.0" recordCount="22.0">
+        <SimplePredicate field="Performance-avoidance orientation (rounded)" operator="equal" value="3.0"/>
+        <ScoreDistribution value="1.0" recordCount="1.0"/>
+        <ScoreDistribution value="3.0" recordCount="5.0"/>
+        <ScoreDistribution value="4.0" recordCount="7.0"/>
+        <ScoreDistribution value="2.0" recordCount="6.0"/>
+        <ScoreDistribution value="6.0" recordCount="0.0"/>
+        <ScoreDistribution value="7.0" recordCount="0.0"/>
+        <ScoreDistribution value="5.0" recordCount="3.0"/>
+        <Node id="2" score="1.0" recordCount="2.0">
+          <SimplePredicate field="Mastery-extrinsic orientation (rounded)" operator="equal" value="4.0"/>
+          <ScoreDistribution value="1.0" recordCount="1.0"/>
+          <ScoreDistribution value="3.0" recordCount="0.0"/>
+          <ScoreDistribution value="4.0" recordCount="0.0"/>
+          <ScoreDistribution value="2.0" recordCount="1.0"/>
+          <ScoreDistribution value="6.0" recordCount="0.0"/>
+          <ScoreDistribution value="7.0" recordCount="0.0"/>
+          <ScoreDistribution value="5.0" recordCount="0.0"/>
+        </Node>
+        <Node id="3" score="4.0" recordCount="6.0">
+          <SimplePredicate field="Mastery-extrinsic orientation (rounded)" operator="equal" value="7.0"/>
+          <ScoreDistribution value="1.0" recordCount="0.0"/>
+          <ScoreDistribution value="3.0" recordCount="1.0"/>
+          <ScoreDistribution value="4.0" recordCount="3.0"/>
+          <ScoreDistribution value="2.0" recordCount="1.0"/>
+          <ScoreDistribution value="6.0" recordCount="0.0"/>
+          <ScoreDistribution value="7.0" recordCount="0.0"/>
+          <ScoreDistribution value="5.0" recordCount="1.0"/>
+          <Node id="5" score="3.0" recordCount="2.0">
+            <SimplePredicate field="Avoidance orientation (rounded)" operator="equal" value="2.0"/>
+            <ScoreDistribution value="1.0" recordCount="0.0"/>
+            <ScoreDistribution value="3.0" recordCount="1.0"/>
+            <ScoreDistribution value="4.0" recordCount="1.0"/>
+            <ScoreDistribution value="2.0" recordCount="0.0"/>
+            <ScoreDistribution value="6.0" recordCount="0.0"/>
+            <ScoreDistribution value="7.0" recordCount="0.0"/>
+            <ScoreDistribution value="5.0" recordCount="0.0"/>
+          </Node>
+          <Node id="7" score="4.0" recordCount="2.0">
+            <SimplePredicate field="Avoidance orientation (rounded)" operator="equal" value="3.0"/>
+            <ScoreDistribution value="1.0" recordCount="0.0"/>
+            <ScoreDistribution value="3.0" recordCount="0.0"/>
+            <ScoreDistribution value="4.0" recordCount="1.0"/>
+            <ScoreDistribution value="2.0" recordCount="1.0"/>
+            <ScoreDistribution value="6.0" recordCount="0.0"/>
+            <ScoreDistribution value="7.0" recordCount="0.0"/>
+            <ScoreDistribution value="5.0" recordCount="0.0"/>
+          </Node>
+          <Node id="8" score="4.0" recordCount="1.0">
+            <SimplePredicate field="Avoidance orientation (rounded)" operator="equal" value="5.0"/>
+            <ScoreDistribution value="1.0" recordCount="0.0"/>
+            <ScoreDistribution value="3.0" recordCount="0.0"/>
+            <ScoreDistribution value="4.0" recordCount="1.0"/>
+            <ScoreDistribution value="2.0" recordCount="0.0"/>
+            <ScoreDistribution value="6.0" recordCount="0.0"/>
+            <ScoreDistribution value="7.0" recordCount="0.0"/>
+            <ScoreDistribution value="5.0" recordCount="0.0"/>
+          </Node>
+          <Node id="9" score="5.0" recordCount="1.0">
+            <SimplePredicate field="Avoidance orientation (rounded)" operator="equal" value="1.0"/>
+            <ScoreDistribution value="1.0" recordCount="0.0"/>
+            <ScoreDistribution value="3.0" recordCount="0.0"/>
+            <ScoreDistribution value="4.0" recordCount="0.0"/>
+            <ScoreDistribution value="2.0" recordCount="0.0"/>
+            <ScoreDistribution value="6.0" recordCount="0.0"/>
+            <ScoreDistribution value="7.0" recordCount="0.0"/>
+            <ScoreDistribution value="5.0" recordCount="1.0"/>
+          </Node>
+        </Node>
+        <Node id="10" score="3.0" recordCount="7.0">
+          <SimplePredicate field="Mastery-extrinsic orientation (rounded)" operator="equal" value="6.0"/>
+          <ScoreDistribution value="1.0" recordCount="0.0"/>
+          <ScoreDistribution value="3.0" recordCount="3.0"/>
+          <ScoreDistribution value="4.0" recordCount="2.0"/>
+          <ScoreDistribution value="2.0" recordCount="1.0"/>
+          <ScoreDistribution value="6.0" recordCount="0.0"/>
+          <ScoreDistribution value="7.0" recordCount="0.0"/>
+          <ScoreDistribution value="5.0" recordCount="1.0"/>
+          <Node id="12" score="2.0" recordCount="1.0">
+            <SimplePredicate field="Avoidance orientation (rounded)" operator="equal" value="2.0"/>
+            <ScoreDistribution value="1.0" recordCount="0.0"/>
+            <ScoreDistribution value="3.0" recordCount="0.0"/>
+            <ScoreDistribution value="4.0" recordCount="0.0"/>
+            <ScoreDistribution value="2.0" recordCount="1.0"/>
+            <ScoreDistribution value="6.0" recordCount="0.0"/>
+            <ScoreDistribution value="7.0" recordCount="0.0"/>
+            <ScoreDistribution value="5.0" recordCount="0.0"/>
+          </Node>
+          <Node id="13" score="3.0" recordCount="2.0">
+            <SimplePredicate field="Avoidance orientation (rounded)" operator="equal" value="4.0"/>
+            <ScoreDistribution value="1.0" recordCount="0.0"/>
+            <ScoreDistribution value="3.0" recordCount="1.0"/>
+            <ScoreDistribution value="4.0" recordCount="1.0"/>
+            <ScoreDistribution value="2.0" recordCount="0.0"/>
+            <ScoreDistribution value="6.0" recordCount="0.0"/>
+            <ScoreDistribution value="7.0" recordCount="0.0"/>
+            <ScoreDistribution value="5.0" recordCount="0.0"/>
+          </Node>
+          <Node id="14" score="3.0" recordCount="3.0">
+            <SimplePredicate field="Avoidance orientation (rounded)" operator="equal" value="3.0"/>
+            <ScoreDistribution value="1.0" recordCount="0.0"/>
+            <ScoreDistribution value="3.0" recordCount="1.0"/>
+            <ScoreDistribution value="4.0" recordCount="1.0"/>
+            <ScoreDistribution value="2.0" recordCount="0.0"/>
+            <ScoreDistribution value="6.0" recordCount="0.0"/>
+            <ScoreDistribution value="7.0" recordCount="0.0"/>
+            <ScoreDistribution value="5.0" recordCount="1.0"/>
+          </Node>
+          <Node id="15" score="3.0" recordCount="1.0">
+            <SimplePredicate field="Avoidance orientation (rounded)" operator="equal" value="5.0"/>
+            <ScoreDistribution value="1.0" recordCount="0.0"/>
+            <ScoreDistribution value="3.0" recordCount="1.0"/>
+            <ScoreDistribution value="4.0" recordCount="0.0"/>
+            <ScoreDistribution value="2.0" recordCount="0.0"/>
+            <ScoreDistribution value="6.0" recordCount="0.0"/>
+            <ScoreDistribution value="7.0" recordCount="0.0"/>
+            <ScoreDistribution value="5.0" recordCount="0.0"/>
+          </Node>
+        </Node>
+        <Node id="17" score="2.0" recordCount="2.0">
+          <SimplePredicate field="Mastery-extrinsic orientation (rounded)" operator="equal" value="2.0"/>
+          <ScoreDistribution value="1.0" recordCount="0.0"/>
+          <ScoreDistribution value="3.0" recordCount="0.0"/>
+          <ScoreDistribution value="4.0" recordCount="0.0"/>
+          <ScoreDistribution value="2.0" recordCount="2.0"/>
+          <ScoreDistribution value="6.0" recordCount="0.0"/>
+          <ScoreDistribution value="7.0" recordCount="0.0"/>
+          <ScoreDistribution value="5.0" recordCount="0.0"/>
+        </Node>
+        <Node id="18" score="4.0" recordCount="4.0">
+          <SimplePredicate field="Mastery-extrinsic orientation (rounded)" operator="equal" value="5.0"/>
+          <ScoreDistribution value="1.0" recordCount="0.0"/>
+          <ScoreDistribution value="3.0" recordCount="1.0"/>
+          <ScoreDistribution value="4.0" recordCount="2.0"/>
+          <ScoreDistribution value="2.0" recordCount="1.0"/>
+          <ScoreDistribution value="6.0" recordCount="0.0"/>
+          <ScoreDistribution value="7.0" recordCount="0.0"/>
+          <ScoreDistribution value="5.0" recordCount="0.0"/>
+        </Node>
+        <Node id="19" score="5.0" recordCount="1.0">
+          <SimplePredicate field="Mastery-extrinsic orientation (rounded)" operator="equal" value="3.0"/>
+          <ScoreDistribution value="1.0" recordCount="0.0"/>
+          <ScoreDistribution value="3.0" recordCount="0.0"/>
+          <ScoreDistribution value="4.0" recordCount="0.0"/>
+          <ScoreDistribution value="2.0" recordCount="0.0"/>
+          <ScoreDistribution value="6.0" recordCount="0.0"/>
+          <ScoreDistribution value="7.0" recordCount="0.0"/>
+          <ScoreDistribution value="5.0" recordCount="1.0"/>
+        </Node>
+      </Node>
+      <Node id="20" score="2.0" recordCount="10.0">
+        <SimplePredicate field="Performance-avoidance orientation (rounded)" operator="equal" value="2.0"/>
+        <ScoreDistribution value="1.0" recordCount="0.0"/>
+        <ScoreDistribution value="3.0" recordCount="3.0"/>
+        <ScoreDistribution value="4.0" recordCount="2.0"/>
+        <ScoreDistribution value="2.0" recordCount="5.0"/>
+        <ScoreDistribution value="6.0" recordCount="0.0"/>
+        <ScoreDistribution value="7.0" recordCount="0.0"/>
+        <ScoreDistribution value="5.0" recordCount="0.0"/>
+        <Node id="21" score="3.0" recordCount="3.0">
+          <SimplePredicate field="Performance-approach orientation (rounded)" operator="equal" value="3.0"/>
+          <ScoreDistribution value="1.0" recordCount="0.0"/>
+          <ScoreDistribution value="3.0" recordCount="2.0"/>
+          <ScoreDistribution value="4.0" recordCount="0.0"/>
+          <ScoreDistribution value="2.0" recordCount="1.0"/>
+          <ScoreDistribution value="6.0" recordCount="0.0"/>
+          <ScoreDistribution value="7.0" recordCount="0.0"/>
+          <ScoreDistribution value="5.0" recordCount="0.0"/>
+        </Node>
+        <Node id="23" score="4.0" recordCount="1.0">
+          <SimplePredicate field="Performance-approach orientation (rounded)" operator="equal" value="2.0"/>
+          <ScoreDistribution value="1.0" recordCount="0.0"/>
+          <ScoreDistribution value="3.0" recordCount="0.0"/>
+          <ScoreDistribution value="4.0" recordCount="1.0"/>
+          <ScoreDistribution value="2.0" recordCount="0.0"/>
+          <ScoreDistribution value="6.0" recordCount="0.0"/>
+          <ScoreDistribution value="7.0" recordCount="0.0"/>
+          <ScoreDistribution value="5.0" recordCount="0.0"/>
+        </Node>
+        <Node id="24" score="3.0" recordCount="3.0">
+          <SimplePredicate field="Performance-approach orientation (rounded)" operator="equal" value="4.0"/>
+          <ScoreDistribution value="1.0" recordCount="0.0"/>
+          <ScoreDistribution value="3.0" recordCount="1.0"/>
+          <ScoreDistribution value="4.0" recordCount="1.0"/>
+          <ScoreDistribution value="2.0" recordCount="1.0"/>
+          <ScoreDistribution value="6.0" recordCount="0.0"/>
+          <ScoreDistribution value="7.0" recordCount="0.0"/>
+          <ScoreDistribution value="5.0" recordCount="0.0"/>
+        </Node>
+        <Node id="25" score="2.0" recordCount="2.0">
+          <SimplePredicate field="Performance-approach orientation (rounded)" operator="equal" value="5.0"/>
+          <ScoreDistribution value="1.0" recordCount="0.0"/>
+          <ScoreDistribution value="3.0" recordCount="0.0"/>
+          <ScoreDistribution value="4.0" recordCount="0.0"/>
+          <ScoreDistribution value="2.0" recordCount="2.0"/>
+          <ScoreDistribution value="6.0" recordCount="0.0"/>
+          <ScoreDistribution value="7.0" recordCount="0.0"/>
+          <ScoreDistribution value="5.0" recordCount="0.0"/>
+        </Node>
+        <Node id="26" score="2.0" recordCount="1.0">
+          <SimplePredicate field="Performance-approach orientation (rounded)" operator="equal" value="1.0"/>
+          <ScoreDistribution value="1.0" recordCount="0.0"/>
+          <ScoreDistribution value="3.0" recordCount="0.0"/>
+          <ScoreDistribution value="4.0" recordCount="0.0"/>
+          <ScoreDistribution value="2.0" recordCount="1.0"/>
+          <ScoreDistribution value="6.0" recordCount="0.0"/>
+          <ScoreDistribution value="7.0" recordCount="0.0"/>
+          <ScoreDistribution value="5.0" recordCount="0.0"/>
+        </Node>
+      </Node>
+      <Node id="27" score="6.0" recordCount="7.0">
+        <SimplePredicate field="Performance-avoidance orientation (rounded)" operator="equal" value="6.0"/>
+        <ScoreDistribution value="1.0" recordCount="0.0"/>
+        <ScoreDistribution value="3.0" recordCount="0.0"/>
+        <ScoreDistribution value="4.0" recordCount="1.0"/>
+        <ScoreDistribution value="2.0" recordCount="0.0"/>
+        <ScoreDistribution value="6.0" recordCount="2.0"/>
+        <ScoreDistribution value="7.0" recordCount="2.0"/>
+        <ScoreDistribution value="5.0" recordCount="2.0"/>
+        <Node id="28" score="4.0" recordCount="2.0">
+          <SimplePredicate field="School value (rounded)" operator="equal" value="3.0"/>
+          <ScoreDistribution value="1.0" recordCount="0.0"/>
+          <ScoreDistribution value="3.0" recordCount="0.0"/>
+          <ScoreDistribution value="4.0" recordCount="1.0"/>
+          <ScoreDistribution value="2.0" recordCount="0.0"/>
+          <ScoreDistribution value="6.0" recordCount="1.0"/>
+          <ScoreDistribution value="7.0" recordCount="0.0"/>
+          <ScoreDistribution value="5.0" recordCount="0.0"/>
+        </Node>
+        <Node id="29" score="5.0" recordCount="2.0">
+          <SimplePredicate field="School value (rounded)" operator="equal" value="1.0"/>
+          <ScoreDistribution value="1.0" recordCount="0.0"/>
+          <ScoreDistribution value="3.0" recordCount="0.0"/>
+          <ScoreDistribution value="4.0" recordCount="0.0"/>
+          <ScoreDistribution value="2.0" recordCount="0.0"/>
+          <ScoreDistribution value="6.0" recordCount="0.0"/>
+          <ScoreDistribution value="7.0" recordCount="0.0"/>
+          <ScoreDistribution value="5.0" recordCount="2.0"/>
+        </Node>
+        <Node id="30" score="7.0" recordCount="3.0">
+          <SimplePredicate field="School value (rounded)" operator="equal" value="2.0"/>
+          <ScoreDistribution value="1.0" recordCount="0.0"/>
+          <ScoreDistribution value="3.0" recordCount="0.0"/>
+          <ScoreDistribution value="4.0" recordCount="0.0"/>
+          <ScoreDistribution value="2.0" recordCount="0.0"/>
+          <ScoreDistribution value="6.0" recordCount="1.0"/>
+          <ScoreDistribution value="7.0" recordCount="2.0"/>
+          <ScoreDistribution value="5.0" recordCount="0.0"/>
+        </Node>
+      </Node>
+      <Node id="33" score="4.0" recordCount="18.0">
+        <SimplePredicate field="Performance-avoidance orientation (rounded)" operator="equal" value="4.0"/>
+        <ScoreDistribution value="1.0" recordCount="1.0"/>
+        <ScoreDistribution value="3.0" recordCount="5.0"/>
+        <ScoreDistribution value="4.0" recordCount="8.0"/>
+        <ScoreDistribution value="2.0" recordCount="1.0"/>
+        <ScoreDistribution value="6.0" recordCount="0.0"/>
+        <ScoreDistribution value="7.0" recordCount="0.0"/>
+        <ScoreDistribution value="5.0" recordCount="3.0"/>
+        <Node id="34" score="4.0" recordCount="1.0">
+          <SimplePredicate field="Avoidance orientation (rounded)" operator="equal" value="6.0"/>
+          <ScoreDistribution value="1.0" recordCount="0.0"/>
+          <ScoreDistribution value="3.0" recordCount="0.0"/>
+          <ScoreDistribution value="4.0" recordCount="1.0"/>
+          <ScoreDistribution value="2.0" recordCount="0.0"/>
+          <ScoreDistribution value="6.0" recordCount="0.0"/>
+          <ScoreDistribution value="7.0" recordCount="0.0"/>
+          <ScoreDistribution value="5.0" recordCount="0.0"/>
+        </Node>
+        <Node id="35" score="3.0" recordCount="4.0">
+          <SimplePredicate field="Avoidance orientation (rounded)" operator="equal" value="2.0"/>
+          <ScoreDistribution value="1.0" recordCount="0.0"/>
+          <ScoreDistribution value="3.0" recordCount="2.0"/>
+          <ScoreDistribution value="4.0" recordCount="0.0"/>
+          <ScoreDistribution value="2.0" recordCount="0.0"/>
+          <ScoreDistribution value="6.0" recordCount="0.0"/>
+          <ScoreDistribution value="7.0" recordCount="0.0"/>
+          <ScoreDistribution value="5.0" recordCount="2.0"/>
+        </Node>
+        <Node id="36" score="4.0" recordCount="4.0">
+          <SimplePredicate field="Avoidance orientation (rounded)" operator="equal" value="4.0"/>
+          <ScoreDistribution value="1.0" recordCount="0.0"/>
+          <ScoreDistribution value="3.0" recordCount="0.0"/>
+          <ScoreDistribution value="4.0" recordCount="4.0"/>
+          <ScoreDistribution value="2.0" recordCount="0.0"/>
+          <ScoreDistribution value="6.0" recordCount="0.0"/>
+          <ScoreDistribution value="7.0" recordCount="0.0"/>
+          <ScoreDistribution value="5.0" recordCount="0.0"/>
+        </Node>
+        <Node id="37" score="3.0" recordCount="5.0">
+          <SimplePredicate field="Avoidance orientation (rounded)" operator="equal" value="3.0"/>
+          <ScoreDistribution value="1.0" recordCount="1.0"/>
+          <ScoreDistribution value="3.0" recordCount="2.0"/>
+          <ScoreDistribution value="4.0" recordCount="1.0"/>
+          <ScoreDistribution value="2.0" recordCount="0.0"/>
+          <ScoreDistribution value="6.0" recordCount="0.0"/>
+          <ScoreDistribution value="7.0" recordCount="0.0"/>
+          <ScoreDistribution value="5.0" recordCount="1.0"/>
+        </Node>
+        <Node id="38" score="3.0" recordCount="3.0">
+          <SimplePredicate field="Avoidance orientation (rounded)" operator="equal" value="5.0"/>
+          <ScoreDistribution value="1.0" recordCount="0.0"/>
+          <ScoreDistribution value="3.0" recordCount="1.0"/>
+          <ScoreDistribution value="4.0" recordCount="1.0"/>
+          <ScoreDistribution value="2.0" recordCount="1.0"/>
+          <ScoreDistribution value="6.0" recordCount="0.0"/>
+          <ScoreDistribution value="7.0" recordCount="0.0"/>
+          <ScoreDistribution value="5.0" recordCount="0.0"/>
+        </Node>
+        <Node id="39" score="4.0" recordCount="1.0">
+          <SimplePredicate field="Avoidance orientation (rounded)" operator="equal" value="1.0"/>
+          <ScoreDistribution value="1.0" recordCount="0.0"/>
+          <ScoreDistribution value="3.0" recordCount="0.0"/>
+          <ScoreDistribution value="4.0" recordCount="1.0"/>
+          <ScoreDistribution value="2.0" recordCount="0.0"/>
+          <ScoreDistribution value="6.0" recordCount="0.0"/>
+          <ScoreDistribution value="7.0" recordCount="0.0"/>
+          <ScoreDistribution value="5.0" recordCount="0.0"/>
+        </Node>
+      </Node>
+      <Node id="40" score="4.0" recordCount="20.0">
+        <SimplePredicate field="Performance-avoidance orientation (rounded)" operator="equal" value="5.0"/>
+        <ScoreDistribution value="1.0" recordCount="0.0"/>
+        <ScoreDistribution value="3.0" recordCount="2.0"/>
+        <ScoreDistribution value="4.0" recordCount="7.0"/>
+        <ScoreDistribution value="2.0" recordCount="2.0"/>
+        <ScoreDistribution value="6.0" recordCount="3.0"/>
+        <ScoreDistribution value="7.0" recordCount="1.0"/>
+        <ScoreDistribution value="5.0" recordCount="5.0"/>
+        <Node id="42" score="4.0" recordCount="3.0">
+          <SimplePredicate field="Academic withdrawal (rounded)" operator="equal" value="2.0"/>
+          <ScoreDistribution value="1.0" recordCount="0.0"/>
+          <ScoreDistribution value="3.0" recordCount="1.0"/>
+          <ScoreDistribution value="4.0" recordCount="2.0"/>
+          <ScoreDistribution value="2.0" recordCount="0.0"/>
+          <ScoreDistribution value="6.0" recordCount="0.0"/>
+          <ScoreDistribution value="7.0" recordCount="0.0"/>
+          <ScoreDistribution value="5.0" recordCount="0.0"/>
+        </Node>
+        <Node id="43" score="6.0" recordCount="6.0">
+          <SimplePredicate field="Academic withdrawal (rounded)" operator="equal" value="3.0"/>
+          <ScoreDistribution value="1.0" recordCount="0.0"/>
+          <ScoreDistribution value="3.0" recordCount="0.0"/>
+          <ScoreDistribution value="4.0" recordCount="1.0"/>
+          <ScoreDistribution value="2.0" recordCount="1.0"/>
+          <ScoreDistribution value="6.0" recordCount="2.0"/>
+          <ScoreDistribution value="7.0" recordCount="0.0"/>
+          <ScoreDistribution value="5.0" recordCount="2.0"/>
+          <Node id="45" score="5.0" recordCount="1.0">
+            <SimplePredicate field="Avoidance orientation (rounded)" operator="equal" value="2.0"/>
+            <ScoreDistribution value="1.0" recordCount="0.0"/>
+            <ScoreDistribution value="3.0" recordCount="0.0"/>
+            <ScoreDistribution value="4.0" recordCount="0.0"/>
+            <ScoreDistribution value="2.0" recordCount="0.0"/>
+            <ScoreDistribution value="6.0" recordCount="0.0"/>
+            <ScoreDistribution value="7.0" recordCount="0.0"/>
+            <ScoreDistribution value="5.0" recordCount="1.0"/>
+          </Node>
+          <Node id="46" score="5.0" recordCount="1.0">
+            <SimplePredicate field="Avoidance orientation (rounded)" operator="equal" value="4.0"/>
+            <ScoreDistribution value="1.0" recordCount="0.0"/>
+            <ScoreDistribution value="3.0" recordCount="0.0"/>
+            <ScoreDistribution value="4.0" recordCount="0.0"/>
+            <ScoreDistribution value="2.0" recordCount="0.0"/>
+            <ScoreDistribution value="6.0" recordCount="0.0"/>
+            <ScoreDistribution value="7.0" recordCount="0.0"/>
+            <ScoreDistribution value="5.0" recordCount="1.0"/>
+          </Node>
+          <Node id="47" score="4.0" recordCount="2.0">
+            <SimplePredicate field="Avoidance orientation (rounded)" operator="equal" value="3.0"/>
+            <ScoreDistribution value="1.0" recordCount="0.0"/>
+            <ScoreDistribution value="3.0" recordCount="0.0"/>
+            <ScoreDistribution value="4.0" recordCount="1.0"/>
+            <ScoreDistribution value="2.0" recordCount="0.0"/>
+            <ScoreDistribution value="6.0" recordCount="1.0"/>
+            <ScoreDistribution value="7.0" recordCount="0.0"/>
+            <ScoreDistribution value="5.0" recordCount="0.0"/>
+          </Node>
+          <Node id="48" score="2.0" recordCount="2.0">
+            <SimplePredicate field="Avoidance orientation (rounded)" operator="equal" value="5.0"/>
+            <ScoreDistribution value="1.0" recordCount="0.0"/>
+            <ScoreDistribution value="3.0" recordCount="0.0"/>
+            <ScoreDistribution value="4.0" recordCount="0.0"/>
+            <ScoreDistribution value="2.0" recordCount="1.0"/>
+            <ScoreDistribution value="6.0" recordCount="1.0"/>
+            <ScoreDistribution value="7.0" recordCount="0.0"/>
+            <ScoreDistribution value="5.0" recordCount="0.0"/>
+          </Node>
+        </Node>
+        <Node id="50" score="4.0" recordCount="4.0">
+          <SimplePredicate field="Academic withdrawal (rounded)" operator="equal" value="4.0"/>
+          <ScoreDistribution value="1.0" recordCount="0.0"/>
+          <ScoreDistribution value="3.0" recordCount="1.0"/>
+          <ScoreDistribution value="4.0" recordCount="3.0"/>
+          <ScoreDistribution value="2.0" recordCount="0.0"/>
+          <ScoreDistribution value="6.0" recordCount="0.0"/>
+          <ScoreDistribution value="7.0" recordCount="0.0"/>
+          <ScoreDistribution value="5.0" recordCount="0.0"/>
+        </Node>
+        <Node id="57" score="5.0" recordCount="6.0">
+          <SimplePredicate field="Academic withdrawal (rounded)" operator="equal" value="5.0"/>
+          <ScoreDistribution value="1.0" recordCount="0.0"/>
+          <ScoreDistribution value="3.0" recordCount="0.0"/>
+          <ScoreDistribution value="4.0" recordCount="1.0"/>
+          <ScoreDistribution value="2.0" recordCount="1.0"/>
+          <ScoreDistribution value="6.0" recordCount="1.0"/>
+          <ScoreDistribution value="7.0" recordCount="1.0"/>
+          <ScoreDistribution value="5.0" recordCount="2.0"/>
+          <Node id="58" score="4.0" recordCount="1.0">
+            <SimplePredicate field="Mastery-extrinsic orientation (rounded)" operator="equal" value="4.0"/>
+            <ScoreDistribution value="1.0" recordCount="0.0"/>
+            <ScoreDistribution value="3.0" recordCount="0.0"/>
+            <ScoreDistribution value="4.0" recordCount="1.0"/>
+            <ScoreDistribution value="2.0" recordCount="0.0"/>
+            <ScoreDistribution value="6.0" recordCount="0.0"/>
+            <ScoreDistribution value="7.0" recordCount="0.0"/>
+            <ScoreDistribution value="5.0" recordCount="0.0"/>
+          </Node>
+          <Node id="59" score="2.0" recordCount="2.0">
+            <SimplePredicate field="Mastery-extrinsic orientation (rounded)" operator="equal" value="7.0"/>
+            <ScoreDistribution value="1.0" recordCount="0.0"/>
+            <ScoreDistribution value="3.0" recordCount="0.0"/>
+            <ScoreDistribution value="4.0" recordCount="0.0"/>
+            <ScoreDistribution value="2.0" recordCount="1.0"/>
+            <ScoreDistribution value="6.0" recordCount="0.0"/>
+            <ScoreDistribution value="7.0" recordCount="1.0"/>
+            <ScoreDistribution value="5.0" recordCount="0.0"/>
+          </Node>
+          <Node id="60" score="6.0" recordCount="2.0">
+            <SimplePredicate field="Mastery-extrinsic orientation (rounded)" operator="equal" value="6.0"/>
+            <ScoreDistribution value="1.0" recordCount="0.0"/>
+            <ScoreDistribution value="3.0" recordCount="0.0"/>
+            <ScoreDistribution value="4.0" recordCount="0.0"/>
+            <ScoreDistribution value="2.0" recordCount="0.0"/>
+            <ScoreDistribution value="6.0" recordCount="1.0"/>
+            <ScoreDistribution value="7.0" recordCount="0.0"/>
+            <ScoreDistribution value="5.0" recordCount="1.0"/>
+          </Node>
+          <Node id="62" score="5.0" recordCount="1.0">
+            <SimplePredicate field="Mastery-extrinsic orientation (rounded)" operator="equal" value="5.0"/>
+            <ScoreDistribution value="1.0" recordCount="0.0"/>
+            <ScoreDistribution value="3.0" recordCount="0.0"/>
+            <ScoreDistribution value="4.0" recordCount="0.0"/>
+            <ScoreDistribution value="2.0" recordCount="0.0"/>
+            <ScoreDistribution value="6.0" recordCount="0.0"/>
+            <ScoreDistribution value="7.0" recordCount="0.0"/>
+            <ScoreDistribution value="5.0" recordCount="1.0"/>
+          </Node>
+        </Node>
+        <Node id="65" score="5.0" recordCount="1.0">
+          <SimplePredicate field="Academic withdrawal (rounded)" operator="equal" value="7.0"/>
+          <ScoreDistribution value="1.0" recordCount="0.0"/>
+          <ScoreDistribution value="3.0" recordCount="0.0"/>
+          <ScoreDistribution value="4.0" recordCount="0.0"/>
+          <ScoreDistribution value="2.0" recordCount="0.0"/>
+          <ScoreDistribution value="6.0" recordCount="0.0"/>
+          <ScoreDistribution value="7.0" recordCount="0.0"/>
+          <ScoreDistribution value="5.0" recordCount="1.0"/>
+        </Node>
+      </Node>
+      <Node id="66" score="2.0" recordCount="8.0">
+        <SimplePredicate field="Performance-avoidance orientation (rounded)" operator="equal" value="1.0"/>
+        <ScoreDistribution value="1.0" recordCount="2.0"/>
+        <ScoreDistribution value="3.0" recordCount="0.0"/>
+        <ScoreDistribution value="4.0" recordCount="0.0"/>
+        <ScoreDistribution value="2.0" recordCount="6.0"/>
+        <ScoreDistribution value="6.0" recordCount="0.0"/>
+        <ScoreDistribution value="7.0" recordCount="0.0"/>
+        <ScoreDistribution value="5.0" recordCount="0.0"/>
+        <Node id="67" score="1.0" recordCount="1.0">
+          <SimplePredicate field="Mastery-extrinsic orientation (rounded)" operator="equal" value="4.0"/>
+          <ScoreDistribution value="1.0" recordCount="1.0"/>
+          <ScoreDistribution value="3.0" recordCount="0.0"/>
+          <ScoreDistribution value="4.0" recordCount="0.0"/>
+          <ScoreDistribution value="2.0" recordCount="0.0"/>
+          <ScoreDistribution value="6.0" recordCount="0.0"/>
+          <ScoreDistribution value="7.0" recordCount="0.0"/>
+          <ScoreDistribution value="5.0" recordCount="0.0"/>
+        </Node>
+        <Node id="68" score="2.0" recordCount="3.0">
+          <SimplePredicate field="Mastery-extrinsic orientation (rounded)" operator="equal" value="7.0"/>
+          <ScoreDistribution value="1.0" recordCount="0.0"/>
+          <ScoreDistribution value="3.0" recordCount="0.0"/>
+          <ScoreDistribution value="4.0" recordCount="0.0"/>
+          <ScoreDistribution value="2.0" recordCount="3.0"/>
+          <ScoreDistribution value="6.0" recordCount="0.0"/>
+          <ScoreDistribution value="7.0" recordCount="0.0"/>
+          <ScoreDistribution value="5.0" recordCount="0.0"/>
+        </Node>
+        <Node id="69" score="2.0" recordCount="1.0">
+          <SimplePredicate field="Mastery-extrinsic orientation (rounded)" operator="equal" value="6.0"/>
+          <ScoreDistribution value="1.0" recordCount="0.0"/>
+          <ScoreDistribution value="3.0" recordCount="0.0"/>
+          <ScoreDistribution value="4.0" recordCount="0.0"/>
+          <ScoreDistribution value="2.0" recordCount="1.0"/>
+          <ScoreDistribution value="6.0" recordCount="0.0"/>
+          <ScoreDistribution value="7.0" recordCount="0.0"/>
+          <ScoreDistribution value="5.0" recordCount="0.0"/>
+        </Node>
+        <Node id="71" score="1.0" recordCount="2.0">
+          <SimplePredicate field="Mastery-extrinsic orientation (rounded)" operator="equal" value="5.0"/>
+          <ScoreDistribution value="1.0" recordCount="1.0"/>
+          <ScoreDistribution value="3.0" recordCount="0.0"/>
+          <ScoreDistribution value="4.0" recordCount="0.0"/>
+          <ScoreDistribution value="2.0" recordCount="1.0"/>
+          <ScoreDistribution value="6.0" recordCount="0.0"/>
+          <ScoreDistribution value="7.0" recordCount="0.0"/>
+          <ScoreDistribution value="5.0" recordCount="0.0"/>
+        </Node>
+        <Node id="72" score="2.0" recordCount="1.0">
+          <SimplePredicate field="Mastery-extrinsic orientation (rounded)" operator="equal" value="3.0"/>
+          <ScoreDistribution value="1.0" recordCount="0.0"/>
+          <ScoreDistribution value="3.0" recordCount="0.0"/>
+          <ScoreDistribution value="4.0" recordCount="0.0"/>
+          <ScoreDistribution value="2.0" recordCount="1.0"/>
+          <ScoreDistribution value="6.0" recordCount="0.0"/>
+          <ScoreDistribution value="7.0" recordCount="0.0"/>
+          <ScoreDistribution value="5.0" recordCount="0.0"/>
+        </Node>
+      </Node>
+      <Node id="73" score="3.0" recordCount="1.0">
+        <SimplePredicate field="Performance-avoidance orientation (rounded)" operator="equal" value="7.0"/>
+        <ScoreDistribution value="1.0" recordCount="0.0"/>
+        <ScoreDistribution value="3.0" recordCount="1.0"/>
+        <ScoreDistribution value="4.0" recordCount="0.0"/>
+        <ScoreDistribution value="2.0" recordCount="0.0"/>
+        <ScoreDistribution value="6.0" recordCount="0.0"/>
+        <ScoreDistribution value="7.0" recordCount="0.0"/>
+        <ScoreDistribution value="5.0" recordCount="0.0"/>
+      </Node>
+    </Node>
+  </TreeModel>
+</PMML>
