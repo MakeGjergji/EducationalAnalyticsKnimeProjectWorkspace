@@ -1,0 +1,19 @@
+
+{
+    "type":"object",
+    "properties":{
+        "column-selection-37:43":{
+            "type":"object",
+            "properties":{
+                "column":{
+                    "type":"string",
+                    "default":"Fear of Failure"
+                }
+            },
+            "description":"Enter Description",
+            "example":{
+                "column":"Fear of Failure"
+            }
+        }
+    }
+}
